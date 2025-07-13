@@ -463,18 +463,15 @@ form textarea:focus {
 
 
 
-
-
-
-
-
-
-
 @media (max-width: 768px) {
 
-  /* === GENERAL === */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
     overflow-x: hidden;
+    margin: 0;
   }
 
   section {
@@ -482,26 +479,26 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* === HEADER Y NAVBAR === */
-  header {
-    text-align: center;
-    padding: 20px 0;
-  }
-
+  /* === ENCABEZADO horizontal === */
   .navbar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    padding: 20px 15px;
+    text-align: center;
   }
 
   .nav-links {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   .logo img {
@@ -510,83 +507,56 @@ form textarea:focus {
     margin: 0 auto;
   }
 
-  /* === HERO & ESCARCHA === */
-  .hero {
-    padding: 40px 15px;
-  }
-
-  .logo-escarchado {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 25px;
-  }
-
-  .logo-escarchado img,
-  #particulasCanvas,
-  .efecto-escarcha {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* === FORMULARIO === */
+  /* === FORMULARIO centrado === */
   .contacto {
     padding: 40px 15px;
   }
 
   .glass-form {
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     padding: 25px 15px;
-    box-sizing: border-box;
   }
 
   form {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
   }
 
   form input,
   form textarea {
     width: 100%;
-    box-sizing: border-box;
+    padding: 12px;
     font-size: 1em;
-  }
-
-  form input::placeholder,
-  form textarea::placeholder {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
   }
 
   .cta {
-    width: 100%;
     max-width: 280px;
+    width: 100%;
     margin: 0 auto;
     display: block;
   }
 
-  /* === UBICACIÓN Y MAPA === */
+  /* === UBICACIÓN y mapa centrado === */
   .ubicacion {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding: 40px 15px;
-    text-align: center;
   }
 
   .glass-mapa {
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px 15px;
-    box-sizing: border-box;
   }
 
   .glass-mapa iframe {
@@ -597,50 +567,21 @@ form textarea:focus {
   }
 
   .info-ubicacion {
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
-    text-align: center;
     font-size: 1em;
     line-height: 1.6;
-  }
-
-  /* === SERVICIOS === */
-  .servicios {
-    padding: 40px 15px;
     text-align: center;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  /* === BOTONES SOCIALES === */
-  .botones-sociales {
-    bottom: 15px;
-    right: 15px;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .social img {
-    width: 40px;
-    height: 40px;
   }
 
   /* === FOOTER === */
   footer {
     padding: 30px 15px;
+    text-align: center;
     font-size: 0.85em;
     line-height: 1.5;
-    text-align: center;
   }
 
   footer p {
