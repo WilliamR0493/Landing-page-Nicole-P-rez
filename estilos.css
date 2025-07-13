@@ -462,9 +462,17 @@ form textarea:focus {
 
 
 
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
-  /* Estructura general */
+  /* === GENERAL === */
   body {
     overflow-x: hidden;
   }
@@ -474,25 +482,35 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* Navbar y logo */
+  /* === HEADER Y NAVBAR === */
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
   .navbar {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
-    text-align: center;
   }
 
   .nav-links {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
-    padding-top: 20px;
+    padding: 0;
+    margin: 0;
   }
 
   .logo img {
     width: 140px;
+    display: block;
+    margin: 0 auto;
   }
 
-  /* Hero y escarcha */
+  /* === HERO & ESCARCHA === */
   .hero {
     padding: 40px 15px;
   }
@@ -500,21 +518,17 @@ form textarea:focus {
   .logo-escarchado {
     width: 180px;
     height: 180px;
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
   }
 
-  .logo-escarchado img {
-    width: 120px;
-    max-height: 100px;
-  }
-
+  .logo-escarchado img,
   #particulasCanvas,
   .efecto-escarcha {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
   }
 
-  /* Formulario */
+  /* === FORMULARIO === */
   .contacto {
     padding: 40px 15px;
   }
@@ -524,11 +538,13 @@ form textarea:focus {
     max-width: 500px;
     margin: 0 auto;
     padding: 25px 15px;
+    box-sizing: border-box;
   }
 
   form {
     width: 100%;
     max-width: 100%;
+    margin: 0 auto;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -538,15 +554,15 @@ form textarea:focus {
 
   form input,
   form textarea {
-    font-size: 1em;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1em;
   }
 
   form input::placeholder,
   form textarea::placeholder {
     font-style: italic;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
   }
 
   .cta {
@@ -556,7 +572,7 @@ form textarea:focus {
     display: block;
   }
 
-  /* Ubicación y mapa */
+  /* === UBICACIÓN Y MAPA === */
   .ubicacion {
     flex-direction: column;
     align-items: center;
@@ -570,7 +586,7 @@ form textarea:focus {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px 15px;
-    text-align: center;
+    box-sizing: border-box;
   }
 
   .glass-mapa iframe {
@@ -585,16 +601,12 @@ form textarea:focus {
     max-width: 500px;
     margin: 0 auto;
     padding: 0 15px;
+    text-align: center;
     font-size: 1em;
     line-height: 1.6;
-    text-align: center;
   }
 
-  .info-ubicacion a {
-    word-break: break-word;
-  }
-
-  /* Tarjetas de servicios */
+  /* === SERVICIOS === */
   .servicios {
     padding: 40px 15px;
     text-align: center;
@@ -610,7 +622,7 @@ form textarea:focus {
     width: 90%;
   }
 
-  /* Botones sociales */
+  /* === BOTONES SOCIALES === */
   .botones-sociales {
     bottom: 15px;
     right: 15px;
@@ -623,7 +635,7 @@ form textarea:focus {
     height: 40px;
   }
 
-  /* Footer */
+  /* === FOOTER === */
   footer {
     padding: 30px 15px;
     font-size: 0.85em;
