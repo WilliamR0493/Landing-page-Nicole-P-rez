@@ -16,7 +16,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        
+
       </div>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
@@ -78,35 +78,42 @@
 
     <section id="contacto" class="contacto">
       <h2>Contáctanos</h2>
-      <form>
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo" required />
-        <textarea placeholder="Mensaje" required></textarea>
-        <button type="submit" class="cta">Enviar</button>
-      </form>
+      <div class="glass-form">
+        <form>
+          <input type="text" placeholder="Tu nombre" required />
+          <input type="email" placeholder="Tu correo" required />
+          <textarea placeholder="Mensaje" required></textarea>
+          <button type="submit" class="cta">Enviar</button>
+        </form>
+      </div>
     </section>
+
   </main>
   <section id="ubicacion" class="ubicacion">
+    <h2> Estamos aquí</h2>
+
+    <div class="glass-mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
     <div class="info-ubicacion">
-      <h2>📍 Estamos aquí</h2>
       <p><strong>Dirección:</strong><br>Carrera 7 #17-01, Oficina 841<br>Edificio Colseguros – Bogotá, Colombia</p>
-      <p><strong>Teléfono:</strong><br>+57 323 8125705</p>
-      <p><strong>Email:</strong><br>info@contadoresparaemprender.com</p>
+
+      <p><strong>Teléfono:</strong><br><a href="tel:+5731234567">+57 323 1234545</a></p>
+
+      <p><strong>Email:</strong><br><a
+          href="mailto:info@contadora.com">info@contadora.com</a></p>
+
       <h3>🕒 Horario</h3>
       <p>Lunes a viernes: 8:00 am – 5:30 pm<br>Sábado: 8:00 am – 1:00 pm</p>
-    </div>
-    <div class="mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.835935607086!2d-74.069722685237!3d4.609710643210932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99c5a6f26f3f%3A0x20a93df90f931942!2sEdificio%20Colseguros!5e0!3m2!1ses!2sco!4v1633024800000!5m2!1ses!2sco"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
     </div>
   </section>
 
 
-  <footer>
-    <p>&copy; 2025 Nicole Pérez. Todos los derechos reservados.</p>
-  </footer>
+
+
 
   <div class="botones-sociales">
     <a href="https://wa.me/573001234567" target="_blank" class="social whatsapp" aria-label="WhatsApp">
@@ -130,89 +137,94 @@
     cards.forEach(card => observer.observe(card));
   </script>
   <script>
-  const canvas = document.getElementById('particulasCanvas');
-  const ctx = canvas.getContext('2d');
-  const particles = [];
+    const canvas = document.getElementById('particulasCanvas');
+    const ctx = canvas.getContext('2d');
+    const particles = [];
 
-  // Ajusta el tamaño del canvas para asegurar claridad
-  canvas.width = 220;
-  canvas.height = 220;
+    // Ajusta el tamaño del canvas para asegurar claridad
+    canvas.width = 220;
+    canvas.height = 220;
 
-  // Crea partículas doradas
-  for (let i = 0; i < 50; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: canvas.height + Math.random() * 60,
-      size: Math.random() * 2 + 1,
-      speed: Math.random() * 0.8 + 0.5,
-      opacity: Math.random() * 0.4 + 0.3
-    });
-  }
+    // Crea partículas doradas
+    for (let i = 0; i < 50; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: canvas.height + Math.random() * 60,
+        size: Math.random() * 2 + 1,
+        speed: Math.random() * 0.8 + 0.5,
+        opacity: Math.random() * 0.4 + 0.3
+      });
+    }
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.y -= p.speed;
-      if (p.y < -10) {
-        p.y = canvas.height + 10;
-        p.x = Math.random() * canvas.width;
-      }
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
-      ctx.fillStyle = `rgba(212,175,55,${p.opacity})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.y -= p.speed;
+        if (p.y < -10) {
+          p.y = canvas.height + 10;
+          p.x = Math.random() * canvas.width;
+        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(212,175,55,${p.opacity})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
 
-  draw();
-</script>
-<script>
-  const canvasGlobal = document.getElementById('escarchaGlobal');
-  const ctxGlobal = canvasGlobal.getContext('2d');
-  canvasGlobal.width = window.innerWidth;
-  canvasGlobal.height = window.innerHeight;
-
-  const particlesGlobal = [];
-
-  for (let i = 0; i < 80; i++) {
-    particlesGlobal.push({
-      x: Math.random() * canvasGlobal.width,
-      y: Math.random() * canvasGlobal.height,
-      size: Math.random() * 2 + 1,
-      speedY: Math.random() * 0.6 + 0.2,
-      opacity: Math.random() * 0.4 + 0.2
-    });
-  }
-
-  function drawGlobal() {
-    ctxGlobal.clearRect(0, 0, canvasGlobal.width, canvasGlobal.height);
-    particlesGlobal.forEach(p => {
-      p.y -= p.speedY;
-      if (p.y < -10) {
-        p.y = canvasGlobal.height + 10;
-        p.x = Math.random() * canvasGlobal.width;
-      }
-      ctxGlobal.beginPath();
-      ctxGlobal.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
-      ctxGlobal.fillStyle = `rgba(212,175,55,${p.opacity})`;
-      ctxGlobal.fill();
-    });
-    requestAnimationFrame(drawGlobal);
-  }
-
-  drawGlobal();
-
-  window.addEventListener("resize", () => {
+    draw();
+  </script>
+  <script>
+    const canvasGlobal = document.getElementById('escarchaGlobal');
+    const ctxGlobal = canvasGlobal.getContext('2d');
     canvasGlobal.width = window.innerWidth;
     canvasGlobal.height = window.innerHeight;
-  });
-</script>
+
+    const particlesGlobal = [];
+
+    for (let i = 0; i < 80; i++) {
+      particlesGlobal.push({
+        x: Math.random() * canvasGlobal.width,
+        y: Math.random() * canvasGlobal.height,
+        size: Math.random() * 2 + 1,
+        speedY: Math.random() * 0.6 + 0.2,
+        opacity: Math.random() * 0.4 + 0.2
+      });
+    }
+
+    function drawGlobal() {
+      ctxGlobal.clearRect(0, 0, canvasGlobal.width, canvasGlobal.height);
+      particlesGlobal.forEach(p => {
+        p.y -= p.speedY;
+        if (p.y < -10) {
+          p.y = canvasGlobal.height + 10;
+          p.x = Math.random() * canvasGlobal.width;
+        }
+        ctxGlobal.beginPath();
+        ctxGlobal.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+        ctxGlobal.fillStyle = `rgba(212,175,55,${p.opacity})`;
+        ctxGlobal.fill();
+      });
+      requestAnimationFrame(drawGlobal);
+    }
+
+    drawGlobal();
+
+    window.addEventListener("resize", () => {
+      canvasGlobal.width = window.innerWidth;
+      canvasGlobal.height = window.innerHeight;
+    });
+  </script>
 
 
-  
-  
+
+
 
 </body>
+<footer>
+  <p>&copy; 2025 Nicole Pérez. Todos los derechos reservados.</p>
+  <p><strong>Email: info@contadora.com</p>
+</footer>
+
 
 </html>
