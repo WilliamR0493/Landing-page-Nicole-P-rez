@@ -463,6 +463,10 @@ form textarea:focus {
 
 
 
+
+
+
+
 @media (max-width: 768px) {
 
   *, *::before, *::after {
@@ -479,26 +483,26 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* === ENCABEZADO horizontal === */
+  /* ENCABEZADO horizontal */
   .navbar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 20px 15px;
-    text-align: center;
   }
 
   .nav-links {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     margin: 0;
     padding: 0;
+  }
+
+  .nav-links li {
+    display: inline-block;
   }
 
   .logo img {
@@ -507,7 +511,25 @@ form textarea:focus {
     margin: 0 auto;
   }
 
-  /* === FORMULARIO centrado === */
+  /* HERO y logo escarchado */
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .logo-escarchado {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+  }
+
+  .logo-escarchado img,
+  #particulasCanvas,
+  .efecto-escarcha {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* FORMULARIO centrado */
   .contacto {
     padding: 40px 15px;
   }
@@ -534,6 +556,13 @@ form textarea:focus {
     padding: 12px;
     font-size: 1em;
     border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  form input::placeholder,
+  form textarea::placeholder {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.4);
   }
 
   .cta {
@@ -543,13 +572,14 @@ form textarea:focus {
     display: block;
   }
 
-  /* === UBICACIÓN y mapa centrado === */
+  /* UBICACIÓN y mapa centrado */
   .ubicacion {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding: 40px 15px;
+    text-align: center;
   }
 
   .glass-mapa {
@@ -564,6 +594,7 @@ form textarea:focus {
     height: 250px;
     border-radius: 12px;
     border: none;
+    display: block;
   }
 
   .info-ubicacion {
@@ -576,16 +607,36 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* === FOOTER === */
+  /* TARJETAS de servicios */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  /* BOTONES SOCIALES */
+  .botones-sociales {
+    bottom: 15px;
+    right: 15px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* FOOTER */
   footer {
     padding: 30px 15px;
-    text-align: center;
     font-size: 0.85em;
     line-height: 1.5;
+    text-align: center;
   }
 
-  footer p {
-    margin: 8px 0;
-  }
-
-}
+  footer p
