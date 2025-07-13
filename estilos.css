@@ -468,30 +468,42 @@ form textarea:focus {
 
 @media (max-width: 768px) {
 
-  /* General para secciones */
+  /* Estructura general */
+  body {
+    overflow-x: hidden;
+  }
+
   section {
     padding: 40px 15px;
   }
 
-  /* Navbar y logo */
+  /* Navbar */
   .navbar {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
   }
 
   .logo img {
     width: 140px;
   }
 
-  /* Hero y logo escarchado */
-  .hero-contenido {
+  /* Hero & escarcha */
+  .hero {
     padding: 40px 15px;
   }
 
   .logo-escarchado {
     width: 180px;
     height: 180px;
+    margin-bottom: 25px;
   }
 
   .logo-escarchado img {
@@ -506,10 +518,15 @@ form textarea:focus {
   }
 
   /* Formulario */
+  .contacto {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
   .glass-form {
-    width: 100%;
     padding: 25px 15px;
     margin: 0 auto;
+    width: 100%;
   }
 
   form {
@@ -531,20 +548,14 @@ form textarea:focus {
     color: rgba(255,255,255,0.4);
   }
 
-  /* Botones sociales */
-  .botones-sociales {
-    bottom: 15px;
-    right: 15px;
-    flex-direction: row;
-    gap: 10px;
+  .cta {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
   }
 
-  .social img {
-    width: 40px;
-    height: 40px;
-  }
-
-  /* Sección de ubicación */
+  /* Sección ubicación */
   .ubicacion {
     flex-direction: column;
     align-items: center;
@@ -573,9 +584,19 @@ form textarea:focus {
     margin: 0 auto;
     font-size: 1em;
     line-height: 1.6;
+    text-align: center;
   }
 
-  /* Tarjetas de servicios */
+  .info-ubicacion a {
+    word-break: break-word;
+  }
+
+  /* Servicios y tarjetas */
+  .servicios {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
   .cards {
     flex-direction: column;
     align-items: center;
@@ -586,6 +607,19 @@ form textarea:focus {
     width: 90%;
   }
 
+  /* Botones sociales */
+  .botones-sociales {
+    bottom: 15px;
+    right: 15px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social img {
+    width: 40px;
+    height: 40px;
+  }
+
   /* Footer */
   footer {
     padding: 25px 15px;
@@ -594,6 +628,8 @@ form textarea:focus {
     text-align: center;
   }
 
+  footer p {
+    margin: 8px 0;
+  }
+
 }
-
-
