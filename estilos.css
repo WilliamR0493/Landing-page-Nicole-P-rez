@@ -307,17 +307,68 @@ textarea {
   align-items: flex-start;
 }
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .logo-escarchado {
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo-escarchado img {
+    width: 120px;
+  }
+
+  .efecto-escarcha,
+  #particulasCanvas {
+    width: 180px;
+    height: 180px;
+  }
+
+  #escarchaGlobal {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .botones-sociales {
     bottom: 15px;
     right: 15px;
     flex-direction: row;
+    gap: 10px;
   }
 
   .social img {
     width: 40px;
     height: 40px;
   }
+
+  .ubicacion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mapa iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
+
+
 .hero h1, .hero h2 {
   animation: slideInTitle 1s ease-out;
 }
