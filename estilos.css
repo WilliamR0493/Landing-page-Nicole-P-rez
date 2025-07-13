@@ -527,7 +527,7 @@ form textarea:focus {
   }
 
   .logo-escarchado img{
-    white: 140px;
+    width: 140px;
     height: auto;
     position: relative;
     z-index: 2;
