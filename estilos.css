@@ -466,7 +466,6 @@ form textarea:focus {
 
 
 
-
 @media (max-width: 768px) {
 
   *, *::before, *::after {
@@ -483,53 +482,54 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* ENCABEZADO horizontal */
+  /* === ENCABEZADO EN LÍNEA === */
+  header {
+    padding: 20px 15px;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 15px;
+    gap: 20px;
+    padding: 0;
   }
 
   .nav-links {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
     margin: 0;
     padding: 0;
-  }
-
-  .nav-links li {
-    display: inline-block;
   }
 
   .logo img {
     width: 140px;
     display: block;
-    margin: 0 auto;
   }
 
-  /* HERO y logo escarchado */
+  /* === HERO & ESCARCHA === */
   .hero {
     padding: 40px 15px;
   }
 
   .logo-escarchado {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 25px;
   }
 
   .logo-escarchado img,
   #particulasCanvas,
   .efecto-escarcha {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
   }
 
-  /* FORMULARIO centrado */
+  /* === FORMULARIO CENTRADO === */
   .contacto {
     padding: 40px 15px;
   }
@@ -572,14 +572,13 @@ form textarea:focus {
     display: block;
   }
 
-  /* UBICACIÓN y mapa centrado */
+  /* === UBICACIÓN Y MAPA CENTRADO === */
   .ubicacion {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding: 40px 15px;
-    text-align: center;
   }
 
   .glass-mapa {
@@ -607,7 +606,7 @@ form textarea:focus {
     text-align: center;
   }
 
-  /* TARJETAS de servicios */
+  /* === TARJETAS DE SERVICIOS === */
   .cards {
     flex-direction: column;
     align-items: center;
@@ -618,7 +617,7 @@ form textarea:focus {
     width: 90%;
   }
 
-  /* BOTONES SOCIALES */
+  /* === BOTONES SOCIALES === */
   .botones-sociales {
     bottom: 15px;
     right: 15px;
@@ -631,7 +630,7 @@ form textarea:focus {
     height: 40px;
   }
 
-  /* FOOTER */
+  /* === FOOTER === */
   footer {
     padding: 30px 15px;
     font-size: 0.85em;
@@ -639,4 +638,7 @@ form textarea:focus {
     text-align: center;
   }
 
-  footer p
+  footer p {
+    margin: 8px 0;
+  }
+}
