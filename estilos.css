@@ -69,6 +69,38 @@ header {
   font-family: 'Playfair Display', serif;
   color: #d4af37;
   margin-bottom: 10px;
+  animation: slideInTitle 1s ease-out;
+}
+
+@keyframes slideInTitle {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Sección Inicio con fondo personalizado --- */
+#inicio {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#inicio::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('images/contaduria.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  filter: grayscale(100%) brightness(0.9);
+  z-index: 0;
+}
+
+#inicio > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* --- Logo escarchado animado --- */
@@ -108,27 +140,35 @@ header {
   0% {
     transform: scale(1);
     opacity: 1;
-    box-shadow:
-      0 0 25px rgba(212,175,55,0.4),
-      0 0 60px rgba(212,175,55,0.2),
-      0 0 80px rgba(212,175,55,0.1);
   }
   50% {
     transform: scale(0.6);
     opacity: 0.3;
-    box-shadow:
-      0 0 10px rgba(212,175,55,0.2),
-      0 0 20px rgba(212,175,55,0.1),
-      0 0 30px rgba(212,175,55,0.05);
   }
   100% {
     transform: scale(1);
     opacity: 1;
-    box-shadow:
-      0 0 25px rgba(212,175,55,0.4),
-      0 0 60px rgba(212,175,55,0.2),
-      0 0 80px rgba(212,175,55,0.1);
   }
+}
+
+/* --- Canvas de partículas --- */
+#particulasCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 220px;
+  z-index: 0;
+}
+
+#escarchaGlobal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* --- Botones flotantes sociales --- */
@@ -165,7 +205,7 @@ header {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* --- CTA Buttons --- */
+/* --- CTA Button --- */
 .cta {
   background-color: #d4af37;
   color: #000;
@@ -175,9 +215,10 @@ header {
   cursor: pointer;
   display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  animation: buttonFadeIn 0.8s ease forwards;
+  animation: buttonFadeIn 0.8s ease forwards, botonPulse 4s infinite;
   opacity: 0;
   margin-top: 20px;
+  border-radius: 10px;
 }
 
 @keyframes buttonFadeIn {
@@ -185,8 +226,18 @@ header {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes botonPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212,175,55,0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212,175,55,0.8);
+    transform: scale(1.05);
+  }
+}
+
 .cta:hover {
-  transform: scale(1.05);
   background-color: #b89d2e;
   box-shadow: 0 0 12px #d4af37;
 }
@@ -266,174 +317,6 @@ header {
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #ffd700;
+  border-color: #ffd700;
+  background: radial-gradient(circle at center, rgba(255,215,0,0.1), #111);
 }
-
-/* --- Contacto --- */
-.contacto {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.contacto h2 {
-  font-family: 'Playfair Display', serif;
-  color: #d4af37;
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-input,
-textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1em;
-}
-
-.ubicacion {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: #000;
-  color: #fff;
-  justify-content: center;
-  align-items: flex-start;
-}
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .logo img {
-    width: 140px;
-  }
-
-  .hero {
-    padding: 40px 15px;
-  }
-
-  .logo-escarchado {
-    width: 180px;
-    height: 180px;
-  }
-
-  .logo-escarchado img {
-    width: 120px;
-  }
-
-  .efecto-escarcha,
-  #particulasCanvas {
-    width: 180px;
-    height: 180px;
-  }
-
-  #escarchaGlobal {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .botones-sociales {
-    bottom: 15px;
-    right: 15px;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .social img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .ubicacion {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mapa iframe {
-    width: 100%;
-    height: 300px;
-  }
-}
-
-
-.hero h1, .hero h2 {
-  animation: slideInTitle 1s ease-out;
-}
-
-@keyframes slideInTitle {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-
-#particulasCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 220px;
-  z-index: 0;
-}
-
-#escarchaGlobal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-.cta {
-  animation: botonPulse 4s infinite;
-}
-
-@keyframes botonPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(212,175,55,0.5);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(212,175,55,0.8);
-    transform: scale(1.05);
-  }
-}
-#inicio {
-  background-image: url('images/fondo-contaduria.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-}
-#inicio::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* puedes ajustar opacidad */
-  z-index: 0;
-}
-#inicio > * {
-  position: relative;
-  z-index: 2;
-}
-@media (max-width: 768px) {
-  #inicio {
-    background-position: top;
-  }
-}
-
