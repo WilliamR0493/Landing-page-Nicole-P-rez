@@ -4,6 +4,8 @@ body {
   background-color: #000;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
 a {
@@ -303,4 +305,16 @@ textarea {
   color: #fff;
   justify-content: center;
   align-items: flex-start;
+}
+@media (max-width: 768px) {
+  .botones-sociales {
+    bottom: 15px;
+    right: 15px;
+    flex-direction: row;
+  }
+
+  .social img {
+    width: 40px;
+    height: 40px;
+  }
 }
