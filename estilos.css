@@ -517,17 +517,34 @@ form textarea:focus {
   }
 
   .logo-escarchado {
+    position: relative;
     width: 180px;
     height: 180px;
-    margin: 0 auto 25px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .logo-escarchado img,
-  #particulasCanvas,
-  .efecto-escarcha {
-    width: 140px;
-    height: 140px;
+  .logo-escarchado img{
+    white: 140px;
+    height: auto;
+    position: relative;
+    z-index: 2;
   }
+
+  #particulascCanvas,
+  .efecto-escarcha {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 16px;
+  }
+ 
 
   /* === FORMULARIO CENTRADO === */
   .contacto {
