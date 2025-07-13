@@ -1,0 +1,389 @@
+/* --- Base global --- */
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* --- Header / Navbar --- */
+header {
+  background-color: #000;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #d4af37;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* --- Logo Header --- */
+.logo img {
+  width: 180px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.logo img:hover {
+  animation: rotateCenter 1s linear infinite;
+}
+
+@keyframes rotateCenter {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1,
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+/* --- Logo animado central --- */
+.logo-animado {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  animation: fadeInLogo 1s ease-out;
+}
+
+.logo-animado img {
+  width: 120px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Marco escarchado que abre y cierra como en el video */
+.marco-escarchado {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  background: linear-gradient(45deg, rgba(212,175,55,0.3), transparent);
+  animation: abrirCerrarCuadro 2.5s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes abrirCerrarCuadro {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.3;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CTA Buttons --- */
+.cta {
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: buttonFadeIn 0.8s ease forwards;
+  opacity: 0;
+  margin-top: 20px;
+}
+
+@keyframes buttonFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  background-color: #b89d2e;
+  box-shadow: 0 0 12px #d4af37;
+}
+
+/* --- Servicios Section --- */
+.servicios {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.servicios h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: radial-gradient(circle at center, rgba(212,175,55,0.05), #111);
+  border: 1px solid #d4af37;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+  animation: pulse 4s infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card h3,
+.card p {
+  position: relative;
+  z-index: 1;
+}
+
+.card h3:hover {
+  color: #ffd700;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffd700;
+}
+
+/* --- Contacto --- */
+.contacto {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+}
+
+/* --- Ubicación --- */
+.ubicacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: #000;
+  color: #fff;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info-ubicacion {
+  max-width: 400px;
+  background-color: #111;
+  border: 1px solid #d4af37;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.info-ubicacion h2,
+.info-ubicacion h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.info-ubicacion p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.mapa iframe {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #d4af37;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  font-size: 0.9em;
+  border-top: 1px solid #d4af37;
+}
+
+.social img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: socialFadeIn 0.8s ease forwards;
+}
+
+.social.whatsapp img { animation-delay: 0.2s; }
+.social.tiktok img   { animation-delay: 0.5s; }
+
+.social img:hover {
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 0 18px #ffd700;
+}
+.logo-escarchado {
+  position: relative;
+  width: 220px; /* ← antes: 160px */
+  height: 220px; /* ← antes: 160px */
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-escarchado img {
+  width: 150px; /* ← antes: 100px */
+  z-index: 2;
+  position: relative;
+}
+
+.efecto-escarcha {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.4),
+    0 0 60px rgba(212,175,55,0.2),
+    0 0 80px rgba(212,175,55,0.1);
+  animation: escarchaPulse 2.5s infinite ease-in-out;
+  z-index: 1;
+}
+
+
+/* Animación que abre y cierra como el corazón del video */
+@keyframes escarchaPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow:
+      0 0 20px rgba(212,175,55,0.4),
+      0 0 40px rgba(212,175,55,0.2),
+      0 0 60px rgba(212,175,55,0.1);
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.3;
+    box-shadow:
+      0 0 10px rgba(212,175,55,0.2),
+      0 0 20px rgba(212,175,55,0.1),
+      0 0 30px rgba(212,175,55,0.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow:
+      0 0 20px rgba(212,175,55,0.4),
+      0 0 40px rgba(212,175,55,0.2),
+      0 0 60px rgba(212,175,55,0.1);
+  }
+}
