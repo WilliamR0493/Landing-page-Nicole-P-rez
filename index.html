@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicole Pérez - Contadora Pública</title>
   <link rel="stylesheet" href="estilos.css" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
     rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -15,9 +18,7 @@
 
   <header>
     <nav class="navbar">
-      <div class="logo">
-
-      </div>
+      <div class="logo"></div>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -41,38 +42,48 @@
     </section>
 
     <section id="servicios" class="servicios">
-      <h2>Servicios Profesionales</h2>
-      <div class="cards">
-        <div class="card">🧾<h3>Revisoría Fiscal</h3>
-          <p>Supervisión financiera y cumplimiento normativo.</p>
+      <h2>Servicios profesionales</h2>
+      
+      <!-- Carrusel Swiper -->
+      <div class="swiper servicios-swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="card">🧾<h3>Revisoría Fiscal</h3>
+              <p>Supervisión financiera y cumplimiento normativo.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">📑<h3>Asesoría Contable y Tributaria</h3>
+              <p>Planeación fiscal y organización contable efectiva.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">👥<h3>Asesoría Laboral</h3>
+              <p>Contrataciones, nómina y obligaciones laborales.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">🌐<h3>Comercio Exterior</h3>
+              <p>Trámites y orientación para importaciones/exportaciones.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">📜<h3>Certificados de Origen</h3>
+              <p>Autenticación oficial para tus operaciones internacionales.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">📋<h3>Seguridad Social y Nómina</h3>
+              <p>Gestión de aportes y planillas mensuales.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">📑<h3>Asesoría Contable y Tributaria</h3>
-          <p>Planeación fiscal y organización contable efectiva.</p>
-        </div>
-        <div class="card">👥<h3>Asesoría Laboral</h3>
-          <p>Contrataciones, nómina y obligaciones laborales.</p>
-        </div>
-        <div class="card">🌐<h3>Comercio Exterior</h3>
-          <p>Trámites y orientación para importaciones/exportaciones.</p>
-        </div>
-        <div class="card">📜<h3>Certificados de Origen</h3>
-          <p>Autenticación oficial para tus operaciones internacionales.</p>
-        </div>
-        <div class="card">📋<h3>Seguridad Social y Nómina</h3>
-          <p>Gestión de aportes y planillas mensuales.</p>
-        </div>
-        <div class="card">💳<h3>Certificados de Ingresos</h3>
-          <p>Documentos oficiales para trámites personales o legales.</p>
-        </div>
-        <div class="card">🔍<h3>Auditorías Externas</h3>
-          <p>Análisis objetivo para decisiones financieras acertadas.</p>
-        </div>
-        <div class="card">🧮<h3>Declaraciones de Renta</h3>
-          <p>Evita sanciones y optimiza tu carga tributaria.</p>
-        </div>
-        <div class="card">🧷<h3>Medios Magnéticos</h3>
-          <p>Cumplimiento distrital y nacional según normativas.</p>
-        </div>
+        
+        <!-- Controles -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </section>
 
@@ -88,32 +99,21 @@
       </div>
     </section>
 
+    <section id="ubicacion" class="ubicacion">
+      <h2>Estamos aquí</h2>
+      <div class="glass-mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="info-ubicacion">
+        <p><strong>Dirección:</strong><br>Carrera 7 #17-01, Oficina 841<br>Edificio Colseguros – Bogotá, Colombia</p>
+        <p><strong>Teléfono:</strong><br><a href="tel:+5731234567">+57 323 1234545</a></p>
+        <p><strong>Email:</strong><br><a href="mailto:info@contadora.com">info@contadora.com</a></p>
+        <h3>🕒 Horario</h3>
+        <p>Lunes a viernes: 8:00 am – 5:30 pm<br>Sábado: 8:00 am – 1:00 pm</p>
+      </div>
+    </section>
   </main>
-  <section id="ubicacion" class="ubicacion">
-    <h2> Estamos aquí</h2>
-
-    <div class="glass-mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-
-    <div class="info-ubicacion">
-      <p><strong>Dirección:</strong><br>Carrera 7 #17-01, Oficina 841<br>Edificio Colseguros – Bogotá, Colombia</p>
-
-      <p><strong>Teléfono:</strong><br><a href="tel:+5731234567">+57 323 1234545</a></p>
-
-      <p><strong>Email:</strong><br><a
-          href="mailto:info@contadora.com">info@contadora.com</a></p>
-
-      <h3>🕒 Horario</h3>
-      <p>Lunes a viernes: 8:00 am – 5:30 pm<br>Sábado: 8:00 am – 1:00 pm</p>
-    </div>
-  </section>
-
-
-
-
 
   <div class="botones-sociales">
     <a href="https://wa.me/573001234567" target="_blank" class="social whatsapp" aria-label="WhatsApp">
@@ -124,28 +124,55 @@
     </a>
   </div>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+
   <script>
+    // Inicialización del Swiper
+    const swiper = new Swiper('.servicios-swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // Efecto de aparición para las tarjetas
     const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     cards.forEach(card => observer.observe(card));
-  </script>
-  <script>
+
+    // Efectos de partículas (logo)
     const canvas = document.getElementById('particulasCanvas');
     const ctx = canvas.getContext('2d');
-    const particles = [];
-
-    // Ajusta el tamaño del canvas para asegurar claridad
     canvas.width = 220;
     canvas.height = 220;
-
-    // Crea partículas doradas
+    
+    const particles = [];
     for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -171,17 +198,15 @@
       });
       requestAnimationFrame(draw);
     }
-
     draw();
-  </script>
-  <script>
+
+    // Efectos de partículas (global)
     const canvasGlobal = document.getElementById('escarchaGlobal');
     const ctxGlobal = canvasGlobal.getContext('2d');
     canvasGlobal.width = window.innerWidth;
     canvasGlobal.height = window.innerHeight;
-
+    
     const particlesGlobal = [];
-
     for (let i = 0; i < 80; i++) {
       particlesGlobal.push({
         x: Math.random() * canvasGlobal.width,
@@ -207,7 +232,6 @@
       });
       requestAnimationFrame(drawGlobal);
     }
-
     drawGlobal();
 
     window.addEventListener("resize", () => {
@@ -215,16 +239,11 @@
       canvasGlobal.height = window.innerHeight;
     });
   </script>
-
-
-
-
-
 </body>
+
 <footer>
   <p>&copy; 2025 Nicole Pérez. Todos los derechos reservados.</p>
-  <p><strong>Email: info@contadora.com</p>
+  <p><strong>Email: info@contadora.com</strong></p>
 </footer>
-
 
 </html>
