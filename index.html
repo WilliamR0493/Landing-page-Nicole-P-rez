@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicole Pérez - Contadora Pública</title>
   <link rel="stylesheet" href="estilos.css" />
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
     rel="stylesheet" />
   <!-- Swiper CSS -->
@@ -43,14 +43,23 @@
 
     <section id="servicios" class="servicios">
       <h2>Servicios profesionales</h2>
-      
+
       <!-- Carrusel Swiper -->
       <div class="swiper servicios-swiper">
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-            <div class="card">🧾<h3>Revisoría Fiscal</h3>
-              <p>Supervisión financiera y cumplimiento normativo.</p>
+            <div class="card">
+              <div class="card-image-container">
+                <!-- Imagen con ruta corregida -->
+                <img src="images/Revisoria fiscal.JPG" alt="Revisoría Fiscal" loading="lazy" width="800" height="600">
+                <div class="image-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="service-icon">🧾</div>
+                <h3>Revisoría Fiscal</h3>
+                <p>Supervisión financiera y cumplimiento normativo.</p>
+              </div>
             </div>
           </div>
           <div class="swiper-slide">
@@ -79,7 +88,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Controles -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
@@ -126,7 +135,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
+
 
   <script>
     // Inicialización del Swiper
@@ -171,7 +180,7 @@
     const ctx = canvas.getContext('2d');
     canvas.width = 220;
     canvas.height = 220;
-    
+
     const particles = [];
     for (let i = 0; i < 50; i++) {
       particles.push({
@@ -205,7 +214,7 @@
     const ctxGlobal = canvasGlobal.getContext('2d');
     canvasGlobal.width = window.innerWidth;
     canvasGlobal.height = window.innerHeight;
-    
+
     const particlesGlobal = [];
     for (let i = 0; i < 80; i++) {
       particlesGlobal.push({
