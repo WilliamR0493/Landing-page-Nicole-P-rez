@@ -726,7 +726,7 @@ form textarea:focus {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(201, 167, 56, 0.2);
   transform: scale(1.1);
 }
 
@@ -782,7 +782,7 @@ form textarea:focus {
   }
   
   .swiper-pagination {
-    bottom: 20px !important;
+    bottom: 30px !important;
   }
 }
 
@@ -1076,3 +1076,6 @@ form textarea:focus {
   width: 20px;
   border-radius: 10px;
 }
+
+
+
