@@ -30,6 +30,8 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links {
@@ -48,11 +50,6 @@ header {
 
 .nav-links a:hover {
   color: #fff;
-}
-
-
-.logo img:hover {
-  animation: rotateCenter 1s linear infinite;
 }
 
 @keyframes rotateCenter {
