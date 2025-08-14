@@ -89,7 +89,7 @@ header {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url('images/contaduria.png');
+  background-image: url('images/contaduria.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1075,6 +1075,10 @@ form textarea:focus {
 .swiper-pagination-bullet-active {
   width: 20px;
   border-radius: 10px;
+}
+.swiper-slide {
+  transform: translateZ(0); /* Activa GPU */
+  backface-visibility: hidden; /* Evita "flickering" */
 }
 
 
