@@ -102,21 +102,42 @@
           </div>
 
           <div class="swiper-slide">
-            <div class="card">📜<h3>Certificados de Origen</h3>
-              <p>Autenticación oficial para tus operaciones internacionales.</p>
+            <div class="card">
+              <div class="card-image-container">
+                <img src="images/certificados-de-origen.jpg" alt="Certificados de Origen" loading="lazy" width="800"
+                  height="600">
+              </div>
+              <div class="image-overlay"></div>
+              <div class="card-content">
+                <h3>Certificados de Origen</h3>
+                <p>Autenticación oficial para tus operaciones internacionales.</p>
+              </div>
             </div>
           </div>
 
           <div class="swiper-slide">
-            <div class="card">📋<h3>Seguridad Social y Nómina</h3>
-              <p>Gestión de aportes y planillas mensuales.</p>
+            <div class="card">
+              <div class="card-image-container">
+                <img src="images/seguridad-social.jpg" alt="Seguridad Social y Nómina" loading="lazy" width="800"
+                  height="600">
+              </div>
+              <div class="image-overlay"></div>
+              <div class="card-content">
+                <h3>Seguridad Social y Nómina</h3>
+                <p>Gestión de aportes y planillas mensuales.</p>
+              </div>
             </div>
           </div>
+
+
+
+
+
         </div>
 
-        <!-- Controles -->
+
         <div class="swiper-pagination"></div>
-        
+
       </div>
     </section>
 
@@ -168,6 +189,7 @@
       slidesPerView: 1,
       spaceBetween: 20,
       centeredSlides: true,
+      speed: 1500,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -176,10 +198,7 @@
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      
       breakpoints: {
         640: { slidesPerView: 1 },
         768: { slidesPerView: 2 },
