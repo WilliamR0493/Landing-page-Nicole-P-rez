@@ -27,7 +27,7 @@
 
   <header>
     <nav class="navbar">
-      
+
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
@@ -147,8 +147,8 @@
           <div class="swiper-slide">
             <div class="card">
               <div class="card-image-container">
-                <img src="images/certificados-de-ingresos_11zon.webp" alt="Certificados de Ingresos" loading="lazy" width="800"
-                  height="600">
+                <img src="images/certificados-de-ingresos_11zon.webp" alt="Certificados de Ingresos" loading="lazy"
+                  width="800" height="600">
               </div>
               <div class="image-overlay"></div>
               <div class="card-content">
@@ -208,12 +208,20 @@
     <section id="contacto" class="contacto">
       <h2>Contáctanos</h2>
       <div class="glass-form">
-        <form>
-          <input type="text" placeholder="Tu nombre" required />
-          <input type="text" placeholder="Tu apellido" required />
-          <input type="email" placeholder="Tu correo" required />
-          <textarea placeholder="Deja tu consulta aquí" required></textarea>
+        <form id="miFormulario" action="https://formsubmit.co/garciawilliam663@gmail.com" method="POST" class="glass-form">
+          <!-- Campos ocultos de FormSubmit -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <!-- Campos del formulario -->
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="text" name="apellido" placeholder="Tu apellido" required>
+          <input type="email" name="email" placeholder="Tu correo" required>
+          <textarea name="mensaje" placeholder="Deja tu consulta aquí" required></textarea>
+
           <button type="submit" class="cta">Enviar</button>
+
         </form>
       </div>
     </section>
