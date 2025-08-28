@@ -365,7 +365,91 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // Datos de las experiencias de clientes
+    const experiencias = {
+      1: {
+        nombre: "Importaciones S.A.",
+        empresa: "Empresa de comercio exterior",
+        imagen: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"Nicole ha sido fundamental para nuestro crecimiento. Su expertise en comercio exterior nos ha ahorrado tiempo y recursos. Su conocimiento de los tratados internacionales y regulaciones aduaneras nos permitió expandirnos a tres nuevos mercados con total confianza en el cumplimiento normativo. Un servicio impecable y profesional.\"",
+        calificacion: "★★★★★",
+        servicio: "Asesoría en Comercio Exterior y Certificados de Origen"
+      },
+      2: {
+        nombre: "TechSolutions Ltda.",
+        empresa: "Startup tecnológica",
+        imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"Como startup, necesitábamos asesoría contable y fiscal confiable. Nicole nos ha guiado en cada paso, con respuestas rápidas y soluciones efectivas. Implementó un sistema de gestión financiera que nos permitió optimizar nuestros recursos durante la fase de crecimiento. Altamente recomendada para emprendimientos tecnológicos.\"",
+        calificacion: "★★★★★",
+        servicio: "Asesoría Contable y Tributaria para Startups"
+      },
+      3: {
+        nombre: "Carlos Mendoza",
+        empresa: "Profesional independiente",
+        imagen: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"He confiado en Nicole para mi declaración de renta durante los últimos 3 años. Siempre precisa, meticulosa y con un trato excepcional. Me ha ayudado a optimizar mis impuestos legalmente, encontrando deducciones que no conocía y asegurando el cumplimiento de todas mis obligaciones tributarias. Su servicio personalizado hace que me sienta como su único cliente.\"",
+        calificacion: "★★★★★",
+        servicio: "Declaración de Renta para Personas Naturales"
+      },
+      4: {
+        nombre: "Manufacturas Colombia",
+        empresa: "Empresa industrial",
+        imagen: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"Contamos con los servicios de revisoría fiscal de Nicole desde hace 5 años. Su rigor profesional y conocimiento actualizado nos ha permitido mantenernos en compliance total. En un entorno regulatorio tan cambiante, su capacidad para anticiparse a los cambios y su enfoque proactivo han sido invaluables para nuestra operación. Es más que una revisor fiscal, es un partner estratégico.\"",
+        calificacion: "★★★★★",
+        servicio: "Revisoría Fiscal y Auditorías Externas"
+      },
+      5: {
+        nombre: "Consultoría Legal & Asociados",
+        empresa: "Bufete de abogados",
+        imagen: "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"La asesoría laboral proporcionada por Nicole ha sido fundamental para nuestro bufete. Su conocimiento en derecho laboral y seguridad social nos ha permitido estructurar contrataciones y manejar nóminas complejas con total tranquilidad. Respuestas rápidas y soluciones prácticas a desafíos legales-financieros.\"",
+        calificacion: "★★★★☆",
+        servicio: "Asesoría Laboral y Seguridad Social"
+      },
+      6: {
+        nombre: "Distribuciones Unidas",
+        empresa: "Cadena de distribución",
+        imagen: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        texto: "\"Trabajamos con Nicole en la implementación de un sistema de medios magnéticos que simplificó enormemente nuestros procesos de reportes tributarios. Su expertise técnico y su capacidad para explicar conceptos complejos de manera sencilla hicieron que la transición fuera fluida y sin contratiempos. Gran profesional.\"",
+        calificacion: "★★★★★",
+        servicio: "Medios Magnéticos y Sistemas de Reportes"
+      }
+    };
 
+    // Funcionalidad para abrir el modal
+    document.querySelectorAll('.cliente-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const clienteId = this.getAttribute('data-cliente');
+        const experiencia = experiencias[clienteId];
+        
+        document.getElementById('modal-img').src = experiencia.imagen;
+        document.getElementById('modal-nombre').textContent = experiencia.nombre;
+        document.getElementById('modal-empresa').textContent = experiencia.empresa;
+        document.getElementById('modal-calificacion').textContent = experiencia.calificacion;
+        document.getElementById('modal-texto').textContent = experiencia.texto;
+        document.getElementById('modal-servicio').textContent = experiencia.servicio;
+        
+        document.getElementById('modalExperiencia').classList.add('activa');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Cerrar modal
+    document.getElementById('cerrarModal').addEventListener('click', function() {
+      document.getElementById('modalExperiencia').classList.remove('activa');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Cerrar modal al hacer clic fuera del contenido
+    document.getElementById('modalExperiencia').addEventListener('click', function(e) {
+      if (e.target === this) {
+        document.getElementById('modalExperiencia').classList.remove('activa');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 
   <script>
     // Inicialización del Swiper
@@ -538,91 +622,7 @@
       }
     });
   </script>
-  <script>
-    // Datos de las experiencias de clientes
-    const experiencias = {
-      1: {
-        nombre: "Importaciones S.A.",
-        empresa: "Empresa de comercio exterior",
-        imagen: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"Nicole ha sido fundamental para nuestro crecimiento. Su expertise en comercio exterior nos ha ahorrado tiempo y recursos. Su conocimiento de los tratados internacionales y regulaciones aduaneras nos permitió expandirnos a tres nuevos mercados con total confianza en el cumplimiento normativo. Un servicio impecable y profesional.\"",
-        calificacion: "★★★★★",
-        servicio: "Asesoría en Comercio Exterior y Certificados de Origen"
-      },
-      2: {
-        nombre: "TechSolutions Ltda.",
-        empresa: "Startup tecnológica",
-        imagen: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"Como startup, necesitábamos asesoría contable y fiscal confiable. Nicole nos ha guiado en cada paso, con respuestas rápidas y soluciones efectivas. Implementó un sistema de gestión financiera que nos permitió optimizar nuestros recursos durante la fase de crecimiento. Altamente recomendada para emprendimientos tecnológicos.\"",
-        calificacion: "★★★★★",
-        servicio: "Asesoría Contable y Tributaria para Startups"
-      },
-      3: {
-        nombre: "Carlos Mendoza",
-        empresa: "Profesional independiente",
-        imagen: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"He confiado en Nicole para mi declaración de renta durante los últimos 3 años. Siempre precisa, meticulosa y con un trato excepcional. Me ha ayudado a optimizar mis impuestos legalmente, encontrando deducciones que no conocía y asegurando el cumplimiento de todas mis obligaciones tributarias. Su servicio personalizado hace que me sienta como su único cliente.\"",
-        calificacion: "★★★★★",
-        servicio: "Declaración de Renta para Personas Naturales"
-      },
-      4: {
-        nombre: "Manufacturas Colombia",
-        empresa: "Empresa industrial",
-        imagen: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"Contamos con los servicios de revisoría fiscal de Nicole desde hace 5 años. Su rigor profesional y conocimiento actualizado nos ha permitido mantenernos en compliance total. En un entorno regulatorio tan cambiante, su capacidad para anticiparse a los cambios y su enfoque proactivo han sido invaluables para nuestra operación. Es más que una revisor fiscal, es un partner estratégico.\"",
-        calificacion: "★★★★★",
-        servicio: "Revisoría Fiscal y Auditorías Externas"
-      },
-      5: {
-        nombre: "Consultoría Legal & Asociados",
-        empresa: "Bufete de abogados",
-        imagen: "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"La asesoría laboral proporcionada por Nicole ha sido fundamental para nuestro bufete. Su conocimiento en derecho laboral y seguridad social nos ha permitido estructurar contrataciones y manejar nóminas complejas con total tranquilidad. Respuestas rápidas y soluciones prácticas a desafíos legales-financieros.\"",
-        calificacion: "★★★★☆",
-        servicio: "Asesoría Laboral y Seguridad Social"
-      },
-      6: {
-        nombre: "Distribuciones Unidas",
-        empresa: "Cadena de distribución",
-        imagen: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        texto: "\"Trabajamos con Nicole en la implementación de un sistema de medios magnéticos que simplificó enormemente nuestros procesos de reportes tributarios. Su expertise técnico y su capacidad para explicar conceptos complejos de manera sencilla hicieron que la transición fuera fluida y sin contratiempos. Gran profesional.\"",
-        calificacion: "★★★★★",
-        servicio: "Medios Magnéticos y Sistemas de Reportes"
-      }
-    };
-
-    // Funcionalidad para abrir el modal
-    document.querySelectorAll('.cliente-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const clienteId = this.getAttribute('data-cliente');
-        const experiencia = experiencias[clienteId];
-        
-        document.getElementById('modal-img').src = experiencia.imagen;
-        document.getElementById('modal-nombre').textContent = experiencia.nombre;
-        document.getElementById('modal-empresa').textContent = experiencia.empresa;
-        document.getElementById('modal-calificacion').textContent = experiencia.calificacion;
-        document.getElementById('modal-texto').textContent = experiencia.texto;
-        document.getElementById('modal-servicio').textContent = experiencia.servicio;
-        
-        document.getElementById('modalExperiencia').classList.add('activa');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    // Cerrar modal
-    document.getElementById('cerrarModal').addEventListener('click', function() {
-      document.getElementById('modalExperiencia').classList.remove('activa');
-      document.body.style.overflow = 'auto';
-    });
-
-    // Cerrar modal al hacer clic fuera del contenido
-    document.getElementById('modalExperiencia').addEventListener('click', function(e) {
-      if (e.target === this) {
-        document.getElementById('modalExperiencia').classList.remove('activa');
-        document.body.style.overflow = 'auto';
-      }
-    });
-  </script>
+  
 </body>
 
 <footer>
